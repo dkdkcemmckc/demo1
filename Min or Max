@@ -1,0 +1,31 @@
+import java.util.*;
+class minAndMax{
+public static void main(String[]sids){
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter number of terms");
+int n = sc.nextInt();
+int[]numbers = new int[n];
+for(int a=0;a<n;a++){
+System.out.println("Enter number");
+numbers[a]=sc.nextInt();
+}
+int minimum = numbers[0];
+int maximum = numbers[n-1];
+int posmin = 0;
+int posmax = n-1;
+for(int a=0;a<n;a++){
+if(maximum < numbers[a]){
+maximum = numbers[a];
+posmax = a;
+}
+if(minimum > numbers[a]){
+minimum = numbers[a];
+posmin = a;
+}
+}
+
+System.out.println("The maximum number is "+maximum+" at a position of "+(posmax+1)+" in the list");
+
+System.out.println("The minimum number is "+minimum+" at a position of "+(posmin+1)+" in the list");
+}
+}
